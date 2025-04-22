@@ -1,0 +1,196 @@
+TemplatesSearch:
+  post:
+    tags:
+      - templates
+    operationId: searchTemplates
+    x-lg-handler: 'App\Http\ApiV1\Modules\Templates\Controllers\TemplatesController@search'
+    x-lg-skip-request-generation: true
+    summary: Search for objects of Template
+    description: Search for objects of Template
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: './schemas/templates.yaml#/SearchTemplatesRequest'
+    responses:
+      "200":
+        description: Successful response
+        content:
+          application/json:
+            schema:
+              $ref: './schemas/templates.yaml#/SearchTemplatesResponse'
+      "400":
+        $ref: '../index.yaml#/components/responses/BadRequest'
+      "500":
+        $ref: '../index.yaml#/components/responses/ServerError'
+TemplatesSearchOne:
+  post:
+    tags:
+      - templates
+    operationId: searchTemplate
+    x-lg-handler: 'App\Http\ApiV1\Modules\Templates\Controllers\TemplatesController@searchOne'
+    x-lg-skip-request-generation: true
+    summary: Search for object of Template
+    description: Search for object of Template
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: './schemas/templates.yaml#/SearchOneTemplateRequest'
+    responses:
+      "200":
+        description: Successful response
+        content:
+          application/json:
+            schema:
+              $ref: './schemas/templates.yaml#/TemplateResponse'
+      "400":
+        $ref: '../index.yaml#/components/responses/BadRequest'
+      "404":
+        $ref: '../index.yaml#/components/responses/NotFound'
+      "500":
+        $ref: '../index.yaml#/components/responses/ServerError'
+Templates:
+  post:
+    tags:
+      - templates
+    operationId: createTemplate
+    x-lg-handler: 'App\Http\ApiV1\Modules\Templates\Controllers\TemplatesController@create'
+    summary: Creating an object of Template
+    description: Creating an object of Template
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: './schemas/templates.yaml#/CreateTemplateRequest'
+    responses:
+      "201":
+        description: Successful response
+        content:
+          application/json:
+            schema:
+              $ref: './schemas/templates.yaml#/TemplateResponse'
+      "400":
+        $ref: '../index.yaml#/components/responses/BadRequest'
+      "500":
+        $ref: '../index.yaml#/components/responses/ServerError'
+TemplatesOne:
+  get:
+    tags:
+      - templates
+    operationId: getTemplate
+    summary: Get the object of Template by id
+    description: Get the object of Template by id
+    x-lg-handler: 'App\Http\ApiV1\Modules\Templates\Controllers\TemplatesController@get'
+    parameters:
+      - $ref: '#/PathId'
+      - $ref: '../common_parameters.yaml#/QueryInclude'
+    responses:
+      "200":
+        description: Successful response
+        content:
+          application/json:
+            schema:
+              $ref: './schemas/templates.yaml#/TemplateResponse'
+      "404":
+        $ref: '../index.yaml#/components/responses/NotFound'
+      "500":
+        $ref: '../index.yaml#/components/responses/ServerError'
+  put:
+    tags:
+      - templates
+    operationId: replaceTemplate
+    summary: Replacing an object of Template
+    description: Replacing an object of Template
+    x-lg-handler: 'App\Http\ApiV1\Modules\Templates\Controllers\TemplatesController@replace'
+    parameters:
+      - $ref: '#/PathId'
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: './schemas/templates.yaml#/ReplaceTemplateRequest'
+    responses:
+      "200":
+        description: Successful response
+        content:
+          application/json:
+            schema:
+              $ref: './schemas/templates.yaml#/TemplateResponse'
+      "400":
+        $ref: '../index.yaml#/components/responses/BadRequest'
+      "404":
+        $ref: '../index.yaml#/components/responses/NotFound'
+      "500":
+        $ref: '../index.yaml#/components/responses/ServerError'
+  patch:
+    tags:
+      - templates
+    operationId: patchTemplate
+    x-lg-handler: 'App\Http\ApiV1\Modules\Templates\Controllers\TemplatesController@patch'
+    summary: Patching an object of Template
+    description: Patching an object of Template
+    parameters:
+      - $ref: '#/PathId'
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: './schemas/templates.yaml#/PatchTemplateRequest'
+    responses:
+      "200":
+        description: Successful response
+        content:
+          application/json:
+            schema:
+              $ref: './schemas/templates.yaml#/TemplateResponse'
+      "400":
+        $ref: '../index.yaml#/components/responses/BadRequest'
+      "404":
+        $ref: '../index.yaml#/components/responses/NotFound'
+      "500":
+        $ref: '../index.yaml#/components/responses/ServerError'
+  delete:
+    tags:
+      - templates
+    operationId: deleteTemplate
+    x-lg-handler: 'App\Http\ApiV1\Modules\Templates\Controllers\TemplatesController@delete'
+    x-lg-skip-request-generation: true
+    summary: Deleting an object of Template
+    description: Deleting an object of Template
+    parameters:
+      - $ref: '#/PathId'
+    responses:
+      "200":
+        description: Successful response
+        content:
+          application/json:
+            schema:
+              $ref: '../common_schemas.yaml#/EmptyDataResponse'
+      "404":
+        $ref: '../index.yaml#/components/responses/NotFound'
+      "500":
+        $ref: '../index.yaml#/components/responses/ServerError'
+TemplatesMassDelete:
+  post:
+    tags:
+      - templates
+    operationId: massDeleteTemplates
+    summary: Mass deleting of object Template
+    description: Mass deleting of object Template
+    x-lg-handler: 'App\Http\ApiV1\Modules\Templates\Controllers\TemplatesController@massDelete'
+    x-lg-skip-request-generation: true
+    requestBody:
+      $ref: '../index.yaml#/components/requestBodies/MassDeleteBody'
+    responses:
+      "200":
+        $ref: '../index.yaml#/components/responses/DeleteResponse'
+      "400":
+        $ref: "../index.yaml#/components/responses/BadRequest"
+      "500":
+        $ref: '../index.yaml#/components/responses/ServerError'
