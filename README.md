@@ -27,6 +27,11 @@ source .venv/bin/activate
 chmod +x seog
 ```
 
+### ℹ️ If you want to use `seog` from anywhere, create a symlink
+```
+sudo ln -s /full/path/to/seog.sh /usr/local/bin/seog
+```
+
 ## Usage
 ```
 seog <command> [options]
