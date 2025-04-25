@@ -12,8 +12,19 @@ A simple command-line tool for generating and translating OpenAPI specifications
 ```bash
 git clone https://github.com/C0rTeZ13/simple-ensi-openapi-generator
 cd simple-ensi-openapi-generator
-poetry install && poetry build
-poetry run seog
+poetry install
+chmod +x seog
+```
+
+## Installation (with .venv)
+```bash
+git clone https://github.com/C0rTeZ13/simple-ensi-openapi-generator
+cd simple-ensi-openapi-generator
+python3 -m venv .venv
+poetry config virtualenvs.in-project true
+poetry install
+source .venv/bin/activate
+chmod +x seog
 ```
 
 ## Usage
