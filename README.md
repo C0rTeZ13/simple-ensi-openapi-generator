@@ -12,7 +12,8 @@ A simple command-line tool for generating and translating OpenAPI specifications
 ```bash
 git clone https://github.com/C0rTeZ13/simple-ensi-openapi-generator
 cd simple-ensi-openapi-generator
-poetry install
+poetry install && poetry build
+poetry run seog
 ```
 
 ## Usage
@@ -84,7 +85,6 @@ seog translate-entity FILE_PATH
 │   └── cli.py
 ├── .gitignore
 ├── pyproject.toml
-├── requirements.txt
 └── README.md
 ```
 

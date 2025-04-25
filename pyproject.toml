@@ -1,20 +1,19 @@
-[project]
-name = "seog"
-version = "0.1.0"
+[tool.poetry]
+name        = "seog"
+version     = "0.1.0"
 description = "Simple Ensi OpenAPI Generator"
-authors = [
-    {name = "work.cortez13@gmail.com"}
-]
-readme = "README.md"
-requires-python = ">=3.12"
-dependencies = [
-    "pyyaml (>=6.0.2,<7.0.0)",
-    "googletrans (==4.0.0-rc1)"
-]
+authors     = ["C0rTeZ13 <work.cortez13@gmail.com>"]
+readme      = "README.md"
+license     = "MIT"
 
-[project.scripts]
+[tool.poetry.dependencies]
+python       = ">=3.12"
+pyyaml       = ">=6.0.2,<7.0.0"
+googletrans  = "==4.0.0-rc1"
+
+[tool.poetry.scripts]
 seog = "seog.cli:main"
 
 [build-system]
-requires = ["poetry-core>=2.0.0,<3.0.0"]
+requires    = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
