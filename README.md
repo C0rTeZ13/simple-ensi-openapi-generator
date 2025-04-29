@@ -69,6 +69,9 @@ seog generate-entity OUTPUT_PATH --csv CSV_PATH -e ENTITY [-t TEMPLATE] [-a]
 
 `--csv` – path to CSV file with field definitions.
 
+### ℹ️ Important: CSV file should have ',' as separator
+**[Watch some tips to make csv file from table.](docs/tips.md)**
+
 `-e, --entity` – entity name (e.g., Customer).
 
 `-t, --template` – path to template file (default: ./examples/example-entity.yaml).
