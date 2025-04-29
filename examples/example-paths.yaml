@@ -171,7 +171,7 @@ TemplatesOne:
         content:
           application/json:
             schema:
-              $ref: '../common_schemas.yaml#/EmptyDataResponse'
+              $ref: '../index.yaml#/components/schemas/EmptyDataResponse'
       "404":
         $ref: '../index.yaml#/components/responses/NotFound'
       "500":
@@ -194,3 +194,13 @@ TemplatesMassDelete:
         $ref: "../index.yaml#/components/responses/BadRequest"
       "500":
         $ref: '../index.yaml#/components/responses/ServerError'
+
+PathId:
+  in: path
+  name: id
+  required: true
+  schema:
+    type: integer
+    minimum: 1
+  description: Numeric id
+  example: 1
